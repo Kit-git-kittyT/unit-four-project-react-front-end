@@ -1,0 +1,41 @@
+import { NavLink } from "react-router-dom";
+import headerLogo from "../assets/header-logo.svg"
+
+function Nav({ user }) {
+  const authenticatedOptions = (
+    <>
+      <NavLink className="nav-link" to="/interests">
+        Interests
+      </NavLink>
+      <NavLink className="nav-link" to="/interest/add">
+        Post
+      </NavLink>
+      <NavLink className="nav-link" to="/sign-out">
+        Log Out
+      </NavLink>
+    </>
+  );
+
+  const unauthenticatedOptions = (
+    <>
+      <NavLink className="nav-link" to="/">
+        Log-In
+      </NavLink>
+      <NavLink className="nav-link" to="/register">
+        Register
+      </NavLink>
+    </>
+  );
+
+  return (
+    <nav>
+      <img src={headerLogo} alt="header interest" />
+      {user && <div className="link welcome">Welcome, {user.username}</div>}
+      <div className="nav-links">
+        {user ? authenticatedOptions : unauthenticatedOptions}
+      </div>
+    </nav>
+  );
+}
+
+export default Nav;
