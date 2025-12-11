@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signIn } from "../services/users.js";
-import splash from "../assets/splash.svg";
+//import splash from "../assets/splash.svg";
 
 function Home({ setUser }) {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ function Home({ setUser }) {
   return (
     <div className="home-container">
       <div>
-        <img src={splash} alt="splash" />
+        {/* <img src={splash} alt="splash" /> */}
       </div>
       <div>
         <form className="home-form" onSubmit={handleSubmit}>

@@ -1,44 +1,44 @@
 import api from "./apiConfig.js";
 
-export const getCats = async () => {
+export const getInterests = async () => {
   try {
-    const response = await api.get("/cats/");
+    const response = await api.get("/posts/");
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const getCat = async (id) => {
+export const getInterest = async (id) => {
   try {
-    const response = await api.get(`/cats/${id}/`);
+    const response = await api.get(`/posts/${id}/`);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const createCat = async (catData) => {
+export const createInterest = async (postData) => {
   try {
-    const response = await api.post("/cats/", catData);
+    const response = await api.post("/posts/", postData);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const updateCat = async (id, catData) => {
+export const updateInterest = async (id, interestData) => {
   try {
-    const response = await api.put(`/cats/${id}/`, catData);
+    const response = await api.put(`/posts/${id}/`, interestData);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-export const deleteCat = async (id) => {
+export const deletePost = async (id) => {
   try {
-    const response = await api.delete(`/cats/${id}/`);
+    const response = await api.delete(`/posts/${id}/`);
     return response.data;
   } catch (error) {
     throw error;

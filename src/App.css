@@ -1,36 +1,242 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* 
+  NAV Bar Section
+*/
+
+nav {
+  background-color: #95c3ec;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav * {
+  font-size: 25px;
+  padding: 2px;
+}
+
+nav > img {
+  width: 25%;
+}
+
+.nav-links {
+  width: 455px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  background-color: #535bf1;
+  color: white;
+}
+
+/* 
+  HOME
+*/
+
+.home-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+}
+
+.home-container img {
+  width: 350px;
+}
+
+.home-form {
+  width: 400px;
+  border: 2px solid #c5d2da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.home-form * {
+  padding: 5px;
+  margin: 5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-form button {
+  background-color: #207868;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.home-form .danger {
+  background: #e57373;
+}
+
+/* Cats */
+.interests-root > h1 {
+  text-align: center;
+}
+
+.interests-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.interest-card {
+  width: 250px;
+  border: 2px solid #2470f7;
+  padding: 10px;
+  margin: 10px;
+}
+
+.interest-card img {
+  width: 250px;
+}
+
+/* Cat Detail */
+.post-detail-root {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-detail-container {
+  height: 250px;
+  display: flex;
+}
+
+.post-detail-container img {
+  width: 200px;
+}
+
+.post-detail-container > div {
+  padding: 15px;
+}
+
+.post-detail-edit {
+  background-color: orange;
+  margin: 5px;
+}
+
+.post-detail-delete {
+  background-color: red;
+  margin: 5px;
+}
+
+.post-detail-bottom-container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.post-detail-bottom-container > div {
+  width: 350px;
+  margin: 10px;
+}
+
+.comments-container {
+  border: 2px solid #95c3ec;
+  padding: 15px;
+}
+
+.comments-container p {
+  text-align: center;
+}
+
+.comments-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comments-container form div {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  margin: 3px;
+}
+
+.comments-container form button {
+  background-color: #207868;
+  margin-top: 5px;
+}
+
+
+/* Create Cat */
+.create-post-root, .edit-post-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.create-post-heading, .edit-post-heading {
+  width: 15%;
+}
+
+.create-post-heading h2, .edit-post-heading h2 {
+  text-align: center;
+}
+
+.create-form, .edit-form {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 35%;
+  justify-content: space-evenly;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+.create-form input, 
+.create-form textarea, 
+.edit-form input, 
+.edit-form textarea {
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-passion {
+  font-size: 48px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.input-thrill {
+  padding-left: 10px;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-challenge {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.create-form > button, .edit-form > button {
+  background-color: #207868;
 }
 
 .card {
@@ -39,4 +245,9 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.interest-card { 
+  border: white solid 2px;
 }

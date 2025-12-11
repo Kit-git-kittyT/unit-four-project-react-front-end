@@ -5,88 +5,95 @@ import { getInterest, updateInterest } from "../services/interests.js";
 function EditPost() {
   let navigate = useNavigate();
 
-  const [cat, setCat] = useState({
-    name: "",
-    breed: "",
-    description: "",
-    age: 0,
+  const [post, setPost] = useState({
+    passion: "",
+    thrill: "",
+    challenge: "",
+    skill: "",
+    pastExperience: "",
   });
 
-  let { catId } = useParams();
+  let { postId } = useParams();
 
   useEffect(() => {
-    const fetchCat = async () => {
-      const catData = await getCat(catId);
-      setCat(catData.cat);
+    const fetchPost = async () => {
+      const postData = await getInterest(postId);
+      setPost(postData.post);
     };
 
-    fetchCat();
-  }, [catId]);
+    fetchPost();
+  }, [postId]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setCat((prevCat) => ({
-      ...prevCat,
+    setPost((prevPost) => ({
+      ...prevPost,
       [name]: value,
     }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateCat(catId, cat);
-    navigate(`/cats/${catId}`);
+    await updateInterest(postId, post);
+    navigate(`/interests/${postId}`);
   };
 
   return (
-    <div className="edit-cat-root">
-      <div className="edit-cat-heading">
-        <h2>Update {cat.name}'s Info</h2>
-        <img src={nerdCat} alt="a cat nerd" />
+    <div className="edit-post-root">
+      <div className="edit-post-heading">
+        <h2>Update your Post's Content</h2>
       </div>
       <form className="edit-form" onSubmit={handleSubmit}>
         <input
-          className="input-name"
+          className="input-passion"
           placeholder="Name"
-          name="name"
-          value={cat.name}
+          name="passion"
+          value={post.passion}
           onChange={handleChange}
           required
           autoFocus
         />
         <input
-          className="input-breed"
-          placeholder="Breed"
-          name="breed"
-          value={cat.breed}
+          className="input-thrill"
+          placeholder="Thrill"
+          name="thrill"
+          value={post.thrill}
           onChange={handleChange}
           required
         />
         <textarea
-          className="input-description"
-          placeholder="Description"
-          name="description"
-          value={cat.description}
+          className="input-challenge"
+          placeholder="Challenge"
+          name="challenge"
+          value={post.challenge}
           onChange={handleChange}
           required
           rows={5}
         />
-        <div className="cat-form-age">
-          <label for="cat-age">
-            Please enter your cat's Age (between 0 and 25):
+       <div className="post-skill-presentation">
+          <label htmlFor="post-skill">
+            Please share some of your skill-set that has set you on the path towards the experience you are about to share:
           </label>
           <input
-            className="input-age"
-            id="cat-age"
-            type="number"
-            name="age"
-            value={cat.age}
+            className="input-skill"
+            id="post-skill"
+            type="text"
+            name="skill set"
+            value={post.skill}
             onChange={handleChange}
-            min="0"
-            max="25"
             required
           />
         </div>
+        <textarea
+          className="input-past-experience"
+          placeholder="Past experience"
+          name="past experience"
+          value={post.pastExperience}
+          onChange={handleChange}
+          required
+          rows={20}
+        />
         <button type="submit">Submit</button>
       </form>
     </div>

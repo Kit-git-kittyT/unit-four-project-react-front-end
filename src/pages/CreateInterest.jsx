@@ -10,7 +10,7 @@ function CreatePost() {
     thrill: "",
     challenge: "",
     skill: "",
-    pastExperience: "",
+    past_experience: "",
   });
 
   const handleChange = (event) => {
@@ -36,7 +36,7 @@ function CreatePost() {
       <form className="create-form" onSubmit={handleSubmit}>
         <input
           className="input-passion"
-          placeholder="Name"
+          placeholder="Passion"
           name="passion"
           value={post.passion}
           onChange={handleChange}
@@ -68,12 +68,21 @@ function CreatePost() {
             className="input-skill"
             id="post-skill"
             type="text"
-            name="skill set"
+            name="skill"
             value={post.skill}
             onChange={handleChange}
             required
           />
         </div>
+        <textarea
+          className="input-past-experience"
+          placeholder="Past experience"
+          name="past_experience"
+          value={post.past_experience}
+          onChange={handleChange}
+          required
+          rows={20}
+        />
         <button type="submit">Submit</button>
       </form>
     </div>
