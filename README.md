@@ -44,5 +44,7 @@ Routes were conceptualised to be linked as follows:
 3. Functionality of front-end 'Pages' directory;
 4. Design to the outlay of components/pages/buttons;
 5. Not starting a code that would not be finished - i.e. depend more on AI than of somebody's help.
+<br>
 
 >__Final Note:__ <br>
+A good reflection point upon quality of production process and of final product shall be best assessed in the deployed version. Henceforth, in the absence of a deployed web version, I pull everything down in the conclusion that the learning process is one prime product of this experience. Further summing it into the moral of: __DO IT YOURSELF!__
